@@ -16,10 +16,11 @@
 
 (stock thickness is 3/8" = 0.375")
 (to be cut down to 0.35" with a fly cutter, path manually programmed into the machine)
+(perhaps 0.3" would be better)
 (the following assumes thickness already reduced)
 
 (=====================================================)
-(machine code)
+(machine code starts, initial setup)
 (=====================================================)
 
 G54 (coordinate system)
@@ -28,13 +29,140 @@ G20 (inch mode)
 G40 (cancel cutter compensation)
 M06 T1 (set to tool 1, 1/4" end mill)
 
-(get coordinates from the sldprt file on my Windows)
 
-(G00 X-0.75 Y0 Z1 (quickly move tool to just above where it will start))
-M03 S3000 (turn on spindle clockwise at 3000 rpm for cutting the outer profile)
+(=====================================================)
+(first frame exterior)
+(=====================================================)
 
 (go down in increments of 25 thou)
 
+G00 X-0.434 Y7.436 Z1 (quickly move tool to just above where it will start)
+M03 S3000 (turn on spindle clockwise at 3000 rpm for cutting the outer profile)
+(confirm spindle speed)
+
+(ramp in)
+(confirm feedrate)
+G01 Z0 F5
+G01 X0.078 Y7.948
+G01 X4.052 Y11.922 Z-0.025
+G01 X10.778 Y10.778
+G01 X1.222 Y1.222
+G01 X0.078 Y7.948 
+G01 X4.052 Y11.922 Z-0.05
+G01 X10.778 Y10.778
+G01 X1.222 Y1.222
+G01 X0.078 Y7.948 
+G01 X4.052 Y11.922 Z-0.075
+G01 X10.778 Y10.778
+G01 X1.222 Y1.222
+G01 X0.078 Y7.948
+G01 X4.052 Y11.922 Z-0.1
+G01 X10.778 Y10.778
+G01 X1.222 Y1.222
+G01 X0.078 Y7.948
+G01 X4.052 Y11.922 Z-0.125
+G01 X10.778 Y10.778
+G01 X1.222 Y1.222
+G01 X0.078 Y7.948
+G01 X4.052 Y11.922 Z-0.15
+G01 X10.778 Y10.778
+G01 X1.222 Y1.222
+G01 X0.078 Y7.948
+G01 X4.052 Y11.922 Z-0.175
+G01 X10.778 Y10.778
+G01 X1.222 Y1.222
+G01 X0.078 Y7.948
+G01 X4.052 Y11.922 Z-0.2
+G01 X10.778 Y10.778
+G01 X1.222 Y1.222
+G01 X0.078 Y7.948
+G01 X4.052 Y11.922 Z-0.225
+G01 X10.778 Y10.778
+G01 X1.222 Y1.222
+G01 X0.078 Y7.948
+G01 X4.052 Y11.922 Z-0.25
+G01 X10.778 Y10.778
+G01 X1.222 Y1.222
+G01 X0.078 Y7.948
+G01 X4.052 Y11.922 Z-0.275
+G01 X10.778 Y10.778
+G01 X1.222 Y1.222
+G01 X0.078 Y7.948
+G01 X4.052 Y11.922 Z-0.3
+G01 X10.778 Y10.778
+G01 X1.222 Y1.222
+G01 X0.078 Y7.948
+G01 X4.052 Y11.922
+G01 X10.778 Y10.778
+G01 Z0
+
+(=====================================================)
+(second frame exterior)
+(=====================================================)
+
+(ramp in)
+G01 X11.922 Y4.052 Z-0.025
+G01 X7.948 Y0.078
+G01 X1.222 Y1.222
+G01 X10.778 Y10.778
+G01 X11.922 Y4.052 Z-0.05
+G01 X7.948 Y0.078
+G01 X1.222 Y1.222
+G01 X10.778 Y10.778
+G01 X11.922 Y4.052 Z-0.075
+G01 X7.948 Y0.078
+G01 X1.222 Y1.222
+G01 X10.778 Y10.778
+G01 X11.922 Y4.052 Z-0.1
+G01 X7.948 Y0.078
+G01 X1.222 Y1.222
+G01 X10.778 Y10.778
+G01 X11.922 Y4.052 Z-0.125
+G01 X7.948 Y0.078
+G01 X1.222 Y1.222
+G01 X10.778 Y10.778
+G01 X11.922 Y4.052 Z-0.15
+G01 X7.948 Y0.078
+G01 X1.222 Y1.222
+G01 X10.778 Y10.778
+G01 X11.922 Y4.052 Z-0.175
+G01 X7.948 Y0.078
+G01 X1.222 Y1.222
+G01 X10.778 Y10.778
+G01 X11.922 Y4.052 Z-0.2
+G01 X7.948 Y0.078
+G01 X1.222 Y1.222
+G01 X10.778 Y10.778
+G01 X11.922 Y4.052 Z-0.225
+G01 X7.948 Y0.078
+G01 X1.222 Y1.222
+G01 X10.778 Y10.778
+G01 X11.922 Y4.052 Z-0.25
+G01 X7.948 Y0.078
+G01 X1.222 Y1.222
+G01 X10.778 Y10.778
+G01 X11.922 Y4.052 Z-0.275
+G01 X7.948 Y0.078
+G01 X1.222 Y1.222
+G01 X10.778 Y10.778
+G01 X11.922 Y4.052 Z-0.3
+G01 X7.948 Y0.078
+G01 X1.222 Y1.222
+G01 X10.778 Y10.778
+G01 X11.922 Y4.052
+
+G01 Z0.2
+
+(=====================================================)
+(first frame interior)
+(=====================================================)
+
+(get thickness of the frame so I can get points)
+
+
+(=====================================================)
+(second frame interior)
+(=====================================================)
 
 
 
