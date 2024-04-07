@@ -3,6 +3,8 @@
 (2 fin frames to be cut out of each 12x12" sheet of G10)
 (G10 specs: https://www.mcmaster.com/9910t35/?fbclid=IwAR3hc5umLRGhN4O2IK_TuNHTnSY-_n690NNLnJXNnnt3zHOB6o1HYXsOQ20)
 
+(confirm actual thickness with calipers, take into account when taking down thickness in the manual section that follows)
+
 (=====================================================)
 (manual part)
 (=====================================================)
@@ -14,9 +16,9 @@
 
 (once zeroed, lift tool a bit, and begin the program)
 
-(stock thickness is 3/8" = 0.375")
-(to be cut down to 0.35" with a fly cutter, path manually programmed into the machine)
-(perhaps 0.3" would be better)
+(stock thickness is (nominally) 3/8" = 0.375")
+(cut down to 0.35" with a fly cutter, path manually programmed into the machine)
+(perhaps 0.325" would be better)
 (the following assumes thickness already reduced)
 
 (=====================================================)
@@ -36,12 +38,12 @@ M06 T1 (set to tool 1, 1/4" end mill)
 
 (go down in increments of 25 thou)
 
-G00 X-0.434 Y7.436 Z1 (quickly move tool to just above where it will start)
+G00 X-0.434 Y7.436 Z0.5 (quickly move tool to just above where it will start)
 M03 S3000 (turn on spindle clockwise at 3000 rpm for cutting the outer profile)
-(confirm spindle speed)
+(spindle speed is a guess, will need to be adjusted)
 
 (ramp in)
-(confirm feedrate)
+(feedrate is a guess, will need to be adjusted)
 G01 Z0 F5
 G01 X0.078 Y7.948
 G01 X4.052 Y11.922 Z-0.025
@@ -157,15 +159,117 @@ G01 Z0.2
 (first frame interior)
 (=====================================================)
 
-(get thickness of the frame so I can get points)
+G00 X1.860 Y3.226 (quickly move tool to just above where it will start)
+G01 Z0
+(ramp in)
+G01 X1.113 Y7.618 Z-0.025
+G01 X4.045 Y10.550
+G01 X8.437 Y9.803
+G00 X1.860 Y3.226
+G01 X1.113 Y7.618 Z-0.05
+G01 X4.045 Y10.550
+G01 X8.437 Y9.803
+G00 X1.860 Y3.226
+G01 X1.113 Y7.618 Z-0.075
+G01 X4.045 Y10.550
+G01 X8.437 Y9.803
+G00 X1.860 Y3.226
+G01 X1.113 Y7.618 Z-0.1
+G01 X4.045 Y10.550
+G01 X8.437 Y9.803
+G00 X1.860 Y3.226
+G01 X1.113 Y7.618 Z-0.125
+G01 X4.045 Y10.550
+G01 X8.437 Y9.803
+G00 X1.860 Y3.226
+G01 X1.113 Y7.618 Z-0.15
+G01 X4.045 Y10.550
+G01 X8.437 Y9.803
+G00 X1.860 Y3.226
+G01 X1.113 Y7.618 Z-0.175
+G01 X4.045 Y10.550
+G01 X8.437 Y9.803
+G00 X1.860 Y3.226
+G01 X1.113 Y7.618 Z-0.2
+G01 X4.045 Y10.550
+G01 X8.437 Y9.803
+G00 X1.860 Y3.226
+G01 X1.113 Y7.618 Z-0.225
+G01 X4.045 Y10.550
+G01 X8.437 Y9.803
+G00 X1.860 Y3.226
+G01 X1.113 Y7.618 Z-0.25
+G01 X4.045 Y10.550
+G01 X8.437 Y9.803
+G00 X1.860 Y3.226
+G01 X1.113 Y7.618 Z-0.275
+G01 X4.045 Y10.550
+G01 X8.437 Y9.803
+G00 X1.860 Y3.226
+G01 X1.113 Y7.618 Z-0.3
+G01 X4.045 Y10.550
+G01 X8.437 Y9.803
+G00 X1.860 Y3.226
+G01 X1.113 Y7.618
 
+G01 Z0.2
 
 (=====================================================)
 (second frame interior)
 (=====================================================)
 
-
-
+G00 X3.226 Y1.860 (quickly move tool to just above where it will start)
+G01 Z0
+(ramp in)
+G01 X9.803 Y8.437 Z-0.025
+G01 X10.550 Y4.045
+G01 X7.618 Y1.113
+G00 X3.226 Y1.860
+G01 X9.803 Y8.437 Z-0.05
+G01 X10.550 Y4.045
+G01 X7.618 Y1.113
+G00 X3.226 Y1.860
+G01 X9.803 Y8.437 Z-0.075
+G01 X10.550 Y4.045
+G01 X7.618 Y1.113
+G00 X3.226 Y1.860
+G01 X9.803 Y8.437 Z-0.1
+G01 X10.550 Y4.045
+G01 X7.618 Y1.113
+G00 X3.226 Y1.860
+G01 X9.803 Y8.437 Z-0.125
+G01 X10.550 Y4.045
+G01 X7.618 Y1.113
+G00 X3.226 Y1.860
+G01 X9.803 Y8.437 Z-0.15
+G01 X10.550 Y4.045
+G01 X7.618 Y1.113
+G00 X3.226 Y1.860
+G01 X9.803 Y8.437 Z-0.175
+G01 X10.550 Y4.045
+G01 X7.618 Y1.113
+G00 X3.226 Y1.860
+G01 X9.803 Y8.437 Z-0.2
+G01 X10.550 Y4.045
+G01 X7.618 Y1.113
+G00 X3.226 Y1.860
+G01 X9.803 Y8.437 Z-0.225
+G01 X10.550 Y4.045
+G01 X7.618 Y1.113
+G00 X3.226 Y1.860
+G01 X9.803 Y8.437 Z-0.25
+G01 X10.550 Y4.045
+G01 X7.618 Y1.113
+G00 X3.226 Y1.860
+G01 X9.803 Y8.437 Z-0.275
+G01 X10.550 Y4.045
+G01 X7.618 Y1.113
+G00 X3.226 Y1.860
+G01 X9.803 Y8.437 Z-0.3
+G01 X10.550 Y4.045
+G01 X7.618 Y1.113
+G00 X3.226 Y1.860
+G01 X9.803 Y8.437
 
 
 G01 Z1
