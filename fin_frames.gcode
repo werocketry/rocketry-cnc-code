@@ -3,8 +3,6 @@
 (2 fin frames to be cut out of each 12x12" sheet of G10)
 (G10 specs: https://www.mcmaster.com/9910t35/?fbclid=IwAR3hc5umLRGhN4O2IK_TuNHTnSY-_n690NNLnJXNnnt3zHOB6o1HYXsOQ20)
 
-(confirm actual thickness with calipers, take into account when taking down thickness in the manual section that follows)
-
 (=====================================================)
 (manual part)
 (=====================================================)
@@ -17,8 +15,8 @@
 (once zeroed, lift tool a bit, and begin the program)
 
 (stock thickness is (nominally) 3/8" = 0.375")
-(cut down to 0.35" with a fly cutter, path manually programmed into the machine)
-(perhaps 0.325" would be better)
+(confirm actual thickness with calipers)
+(cut down to 0.325" with a fly cutter, path manually programmed into the machine)
 (the following assumes thickness already reduced)
 
 (=====================================================)
@@ -40,11 +38,10 @@ M06 T1 (set to tool 1, 1/4" end mill)
 
 G00 X-0.434 Y7.436 Z0.5 (quickly move tool to just above where it will start)
 M03 S3000 (turn on spindle clockwise at 3000 rpm for cutting the outer profile)
-(spindle speed is a guess, will need to be adjusted)
+(spindle speed is a guess, will need to be adjusted on the machine)
 
 (ramp in)
-(feedrate is a guess, will need to be adjusted)
-G01 Z0 F5
+G01 Z0 F20
 G01 X0.078 Y7.948
 G01 X4.052 Y11.922 Z-0.025
 G01 X10.778 Y10.778
@@ -96,6 +93,34 @@ G01 X1.222 Y1.222
 G01 X0.078 Y7.948
 G01 X4.052 Y11.922
 G01 X10.778 Y10.778
+
+(last cut, tabs)
+G01 Z-0.33
+G01 X8.009 Y8.009
+G01 Z-0.3
+G01 X7.392 Y7.392
+G01 Z-0.33
+G01 X4.606 Y4.606
+G01 Z-0.3
+G01 X3.899 Y3.899
+G01 Z-0.33
+G01 X1.222 Y1.222
+G01 X0.619 Y4.767
+G01 Z-0.3
+G01 X0.451 Y5.753
+G01 Z-0.33
+G01 X0.078 Y7.948
+G01 X1.711 Y9.581
+G01 Z-0.3
+G01 X2.419 Y10.289
+G01 Z-0.33
+G01 X4.052 Y11.922
+G01 X6.934 Y11.432
+G01 Z-0.3
+G01 X7.920 Y11.265
+G01 Z-0.33
+G01 X10.778 Y10.778
+
 G01 Z0
 
 (=====================================================)
@@ -152,6 +177,27 @@ G01 X7.948 Y0.078
 G01 X1.222 Y1.222
 G01 X10.778 Y10.778
 G01 X11.922 Y4.052
+
+(last cut, tabs)
+G01 Z-0.33
+G01 X11.432 Y6.934
+G01 Z-0.3
+G01 X11.265 Y7.920
+G01 Z-0.33
+G01 X10.778 Y10.778
+G01 Z-0.3
+G01 X11.922 Y4.052
+G01 Z-0.33
+G01 X10.289 Y2.419
+G01 Z-0.3
+G01 X9.581 Y1.711
+G01 Z-0.33
+G01 X7.948 Y0.078
+G01 X5.753 Y0.451
+G01 Z-0.3
+G01 X4.767 Y0.619
+G01 Z-0.33
+G01 X1.222 Y1.222
 
 G01 Z0.2
 
@@ -212,6 +258,37 @@ G01 X8.437 Y9.803
 G01 X1.860 Y3.226
 G01 X1.113 Y7.618
 
+(last cut, tabs)
+G01 Z-0.33
+G01 X2.226 Y8.730
+G01 Z-0.3
+G01 X2.993 Y9.437
+G01 Z-0.33
+G01 X4.045 Y10.550
+G01 X5.748 Y10.260
+G01 Z-0.3
+G01 X6.734 Y10.092
+G01 Z-0.33
+G01 X8.437 Y9.803
+G01 X6.717 Y8.082
+G01 Z-0.3
+G01 X6.009 Y7.375
+G01 Z-0.33
+G01 X4.288 Y5.654
+G01 Z-0.3
+G01 X3.581 Y4.947
+G01 Z-0.33
+G01 X1.860 Y3.226
+G01 X1.570 Y4.929
+G01 Z-0.3
+G01 X1.403 Y5.915
+G01 Z-0.33
+G01 X1.113 Y7.618
+
+
+
+
+
 G01 Z0.2
 
 (=====================================================)
@@ -271,6 +348,32 @@ G01 X7.618 Y1.113
 G01 X3.226 Y1.860
 G01 X9.803 Y8.437
 
+(last cut, tabs)
+G01 Z-0.33
+G01 X10.092 Y6.734
+G01 Z-0.3
+G01 X10.260 Y5.748
+G01 Z-0.33
+G01 X10.550 Y4.045
+G01 X9.437 Y2.993
+G01 Z-0.3
+G01 X8.730 Y2.226
+G01 Z-0.33
+G01 X7.618 Y1.113
+G01 X5.915 Y1.403
+G01 Z-0.3
+G01 X4.929 Y1.570
+G01 Z-0.33
+G01 X3.226 Y1.860
+G01 X4.947 Y3.581
+G01 Z-0.3
+G01 X5.654 Y4.288
+G01 Z-0.33
+G01 X7.375 Y6.009
+G01 Z-0.3
+G01 X8.082 Y6.717
+G01 Z-0.33
+G01 X9.803 Y8.437
 
 G01 Z1
 
