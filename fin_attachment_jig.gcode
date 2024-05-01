@@ -7,7 +7,7 @@
 (for aligning the fins before attachment to the rocket)
 (simple circle with 3 slots 120 apart, cut into a sheet of MDF)
 (add a slot for the Lbrackets so they're really exact?)
-(intended to be cut into a sheet of MDF at least AAA thick, at least AAA long, and at least AAA wide)
+(intended to be cut into a sheet of MDF that's 12.6 mm thick, at least AAA long, and at least AAA wide)
 
 (body tube 5.5" diameter)
 (fins extend another 5.5" radially)
@@ -46,6 +46,9 @@ M03 S3000 (turn on spindle clockwise at 3000 rpm for cutting the outer profile)
 
 G01 Z-0.3 (is that how deep we want the circle?)
 G02 X5.5 Y0 R5.5 (cut a circle with a radius of 5.5")
+(Nathan: motor tube ID is 137.5 +- 0.1mm, OD IS 141 +- 0.1 mm)
+
+(UNITS!!!)
 
 (=====================================================)
 (slots)
