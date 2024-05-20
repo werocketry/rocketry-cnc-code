@@ -5,13 +5,10 @@
 (=====================================================)
 
 (for initial alignment of the fins on the motor tube with JB Weld)
-(simple circle with 3 slots 120 apart, cut into a sheet of MDF)
+(simple circle with 3 slots, cut into a sheet of MDF)
+(can use L-brackets to add vertical pieces of MDF whose edges are aligned with the edges of the slots, and pushing the fins against these vertical pieces will align them perfectly where they need to be)
 
-(the sheet of MDF that this code is written for is 0.496" thick, 49.6" long, and 24.8" wide)
-
-(body tube 5.5" diameter)
-(fins extend another 5.5" radially)
-(but do we don't have to have the full fin span in the slot)
+(the sheet of MDF that this code is written for is 0.496" thick, 23.94" long, and 10.8" wide)
 
 (=====================================================)
 (manual part)
@@ -31,20 +28,21 @@
 G54 (coordinate system)
 G90 (absolute mode)
 G20 (inch mode)
-G40 (cancel cutter compensation)
+G42 (cutter compensation right)
 M06 T1 (set to tool 1, 1/4" end mill)
 
 (=====================================================)
 (circle)
 (=====================================================)
 
-G00 X24.8 Y-17.8232 Z0.5 (quickly move tool to just above where it will start, bottom of circle)
-M03 S3000 (turn on spindle clockwise at 3000 rpm)
-(CHECK THAT 3000 IS A GOOD SPEED FOR MDF)
+G00 X11.9685 Y-8.22467 Z0.5 (quickly move tool to just above where it will start, bottom of circle)
+M03 S2500 (turn on spindle clockwise at 2500 rpm)
 
 G01 Z-0.2
-G02 J5.4232
-(motor tube ID is 137.75mm ~ 5.4232")
+G02 J2.7916 (circle)
+(motor tube OD 5.5832")
+
+(may want to pause program here, manually jog the tool away from the circle, and test fit the motor tube)
 
 (=====================================================)
 (slots)
@@ -53,17 +51,25 @@ G02 J5.4232
 (cut first slot, fin will be straight down from bottom of circle, slot will be slightly offset so that when another piece of MDF is lined up with the edge of this cut, and fin is placed against it, fin will be in the right spot given its thickness)
 
 (use trig to find it once measured the thickness of ALL the fins)
+(or use a SolidWorks sketch)
 
-(move along circle to first slot)
-G02 X Y- R5.4232
+G01 Z0.2
+G01 X12.1765 Y-8.22467
+G01 Z-0.2
+G00 X12.1765 Y-10.22467
+G01 Z0.2
 
-G01 
-G01 Z0.5
-(move to next spot on circle that intersects a slot with G00)
-(use trig to find it)
-(cut final slot)
+(second slot)
+G01 X14.2821 Y-3.85714
+G01 Z-0.2
+G00 X16.01415 Y-2.85714
+G01 Z0.2
 
-G01 Z1
+(third slot)
+G01 X9.45369 Y-4.22115
+G01 Z-0.2
+G00 X7.68559 Y-3.28637
+G01 Z0.2
 
 (=====================================================)
 (end the program)
